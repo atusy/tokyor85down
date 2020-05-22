@@ -1,4 +1,4 @@
-#' rmarkdown::html_documentの機能全部有効版
+#' リッチなrmarkdown::html_document
 #'
 #' `toc`, `toc_float`, `numbber_sections`, `code_folding`, `code_download`を
 #' 有効にした。
@@ -18,7 +18,11 @@ rich_html_document <- function(
   ...
 ) {
   rmarkdown::html_document(
-    toc = toc, toc_float = toc_float, number_sections = number_sections,
-    code_folding = code_folding, code_download = code_download
+    toc = toc,
+    toc_float = toc_float,
+    number_sections = number_sections,
+    code_folding = code_folding,
+    code_download = code_download,
+    ...
   )
 }
