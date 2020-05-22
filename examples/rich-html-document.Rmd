@@ -1,0 +1,21 @@
+---
+title: "tokyor85down::rich_html_documentを使うと便利な機能が全部有効になります"
+output:
+    tokyor85down::rich_html_document: default
+    html_document: default
+toc-title: たとえば
+---
+
+# このR Markdownファイルはダウンロードできます
+
+# 見出しは
+
+## 番号がつき
+
+## サイドバーに浮かびます
+
+# コードブロックは折り畳めます
+
+```{r}
+head(iris)
+```

@@ -1,0 +1,18 @@
+---
+title: "tokyor85down::styled_word_document`を使うと見出しに番号がつきます"
+output:
+    tokyor85down::styled_word_document: default
+    word_document: default
+---
+
+# 章A
+
+# 章B
+
+# 章B-a
+
+# 章B-b
+
+
+
+

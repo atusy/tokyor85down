@@ -5,4 +5,10 @@ output:
   html_document: default
 ---
 
-
+段落内で
+改行した時、
+`html_document`
+だと改行が全て半角スペースになりますが、
+`tokyor85down::styled_html_document`
+では、前後が全角スペースなら
+半角スペースを使わず直結します。
