@@ -1,0 +1,20 @@
+Package: tokyor85down
+Title: Tokyo.R 85用のオリジナルR Markdownフォーマット集
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "atusy",
+           family = "",
+           role = c("aut", "cre"),
+           email = "atusy.rpkg@gmail.com",
+           comment = c(ORCID = "0000-0002-8335-495X")
+           )
+Description: オリジナルR Markdownフォーマットを作るには、既存のフォーマットのラッパー関数から書くと良いことを示します。
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: ja
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports:
+    rmarkdown,
+    htmltools

@@ -1,0 +1,8 @@
+---
+title: "styled_html_documentを使うとタイトルが赤くなります"
+output:
+  tokyor85down::styled_html_document: default
+  html_document: default
+---
+
+
