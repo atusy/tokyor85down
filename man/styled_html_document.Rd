@@ -2,14 +2,30 @@
 % Please edit documentation in R/styled-html-document.R
 \name{styled_html_document}
 \alias{styled_html_document}
-\title{rmarkdown::html_documentの機能全部有効版}
+\title{rmarkdown::html_documentにオリジナルスタイルシートを適用した版}
 \usage{
-styled_html_document(...)
+styled_html_document(
+  extra_dependencies = NULL,
+  md_extensions = NULL,
+  line_breaks = c("east_asian_line_breaks", "hard_line_breaks", "ignore_line_breaks",
+    "default"),
+  ...
+)
 }
 \arguments{
+\item{extra_dependencies}{Additional function arguments to pass to the
+base R Markdown HTML output formatter \code{\link[rmarkdown]{html_document_base}}}
+
+\item{md_extensions}{Markdown extensions to be added or removed from the
+default definition or R Markdown. See the \code{\link[rmarkdown]{rmarkdown_format}} for
+additional details.}
+
+\item{line_breaks}{Rmd内の改行の扱い。
+既定値は改行の前後が全角文字なら詰め、それ以外なら半角スペースを入れる
+（\code{"east_asian_line_breaks"}）。}
+
 \item{...}{\code{rmarkdown::html_document}に渡す引数。}
 }
 \description{
-\code{toc}, \code{toc_float}, \code{numbber_sections}, \code{code_folding}, \code{code_download}を
-有効にした。
+rmarkdown::html_documentにオリジナルスタイルシートを適用した版
 }

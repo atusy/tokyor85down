@@ -2,7 +2,7 @@
 % Please edit documentation in R/rich-html-document.R
 \name{rich_html_document}
 \alias{rich_html_document}
-\title{rmarkdown::html_documentの機能全部有効版}
+\title{リッチなrmarkdown::html_document}
 \usage{
 rich_html_document(
   toc = TRUE,
