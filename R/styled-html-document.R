@@ -9,28 +9,35 @@
 #'   `rmarkdown::html_document`に渡す引数。
 #'
 #' @export
-styled_html_document <- function(
-  extra_dependencies = NULL,
-  md_extensions = NULL,
-  line_breaks = c(
-    "east_asian_line_breaks",
-    "hard_line_breaks",
-    "ignore_line_breaks",
-    "default"
-  ),
-  ...
-) {
-  line_breaks = match.arg(line_breaks)
+styled_html_document <- function(extra_dependencies = NULL,
+                                 md_extensions = NULL,
+                                 line_breaks = c(
+                                   "east_asian_line_breaks",
+                                   "hard_line_breaks",
+                                   "ignore_line_breaks",
+                                   "default"
+                                 ),
+                                 ...) {
+  # ユーザーが指定した依存ファイルの方が優先されるように、
+  # dependencies, extra_dependenciesの順で指定する
+  extra_dependencies <-
+    append(list(dep_css()), extra_dependencies)
+
+  # 同様にユーザーが指定したmd_extensionsを優先する
+  line_breaks <-
+    match.arg(line_breaks)
+
+  md_extensions <-
+    if (line_breaks == "default") {
+      md_extensions
+    } else {
+      c("+", line_breaks, md_extensions)
+    }
 
   # カスタマイズしたhtml_documentの生成
   rmarkdown::html_document(
-    # ユーザーが指定した依存ファイルの方が優先されるように、
-    # dependencies, extra_dependenciesの順で指定する
-    extra_dependencies =
-      append(list(dep_css()), extra_dependencies),
-    # 同様にユーザーが指定したmd_extensionsを優先する
-    md_extensions =
-      c(if (line_breaks == "default") "" else line_breaks, md_extensions),
+    extra_dependencies = extra_dependencies,
+    md_extensions = md_extensions,
     ...
   )
 }
